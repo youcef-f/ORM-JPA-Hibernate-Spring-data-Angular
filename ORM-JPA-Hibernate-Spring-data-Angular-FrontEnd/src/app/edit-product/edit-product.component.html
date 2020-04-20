@@ -1,0 +1,55 @@
+<div class="container" *ngIf="currentProduit">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Edit produit</div>
+
+      <div class="panel-body" >
+
+        <form #form="ngForm" (ngSubmit)="onEditProduit(form.value)">
+
+
+          <!--probleme avec dropdown et angular
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                Categorie
+                <span class="caret"></span>
+              </button>
+              <ul *ngFor="let categorie of categories._embedded.categories" class="dropdown-menu"
+                  aria-labelledby="dropdownMenu1">
+                <li><a>{{categorie.nomCategorie}}</a></li>
+              </ul>
+            </div>-->
+
+<!--          <div class="form-group">
+            <label class="control-label">Catégorie</label>
+             <input class="form-control" type="text" name="nomCategorie" ngModel [(ngModel)]="currentProduit.nomCategorie" >
+            <input class="form-control" type="text" name="nomCategorie" ngModel  >
+          </div>-->
+
+          <div class="form-group">
+            <label class="control-label">Désignation</label>
+            <input class="form-control" type="text" name="designation" ngModel [(ngModel)]="currentProduit.designation">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Quantité</label>
+            <input class="form-control" type="text" name="quantite" ngModel [(ngModel)]="currentProduit.quantite" >
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">prix</label>
+            <input class="form-control" type="text" name="prix" ngModel [(ngModel)]="currentProduit.prix" >
+          </div>
+
+          <p></p>
+          <p></p>
+          <p></p>
+          <button class="btn bg-success" type="submit">Save</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
